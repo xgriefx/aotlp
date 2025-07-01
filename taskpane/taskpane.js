@@ -2,8 +2,7 @@ Office.onReady(() => {
   // Office is ready
 });
 
-function addTlpLabel() {
-  const tlpValue = document.getElementById("tlpSelect").value;
+function addTlpLabel(tlpValue) {
   Word.run(async (context) => {
     const sections = context.document.sections;
     context.load(sections, "headers");
