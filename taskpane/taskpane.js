@@ -1,7 +1,6 @@
 let addTlpLabel;
 
 Office.onReady(() => {
-  // Definujeme funkciu až keď je Office pripravený
   addTlpLabel = function(tlpValue) {
     Word.run(async (context) => {
       const sections = context.document.sections;
@@ -9,7 +8,13 @@ Office.onReady(() => {
       await context.sync();
 
       const header = sections.items[0].getHeader("Primary");
-      header.insertText(tlpValue, "Start");
+
+      // Clear existing content in header
+      header.clear();
+
+      // Insert new right-aligned label
+      const paragraph = header.insertParagraph(tlpValue, "Start");
+      paragraph.alignment = "Right";
 
       await context.sync();
     }).catch((error) => {
