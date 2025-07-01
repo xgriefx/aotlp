@@ -4,7 +4,7 @@
            xsi:type="TaskPaneApp">
   <Id>9a55b420-b60e-44b4-b2b4-78815fe7a01e</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>YourCompany</ProviderName>
+  <ProviderName>AGEL</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="TLP Štítky" />
   <Description DefaultValue="Pridá TLP štítok do hlavičky dokumentu." />
@@ -17,7 +17,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:3000/taskpane/taskpane.html" />
+    <SourceLocation DefaultValue="https://raw.githubusercontent.com/xgriefx/aotlp/refs/heads/main/taskpane/taskpane.html" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
