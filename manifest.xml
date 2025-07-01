@@ -6,10 +6,10 @@
   <Version>1.0.0.0</Version>
   <ProviderName>AGEL</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="TLP Štítky" />
+  <DisplayName DefaultValue="AGEL TLP Štítky" />
   <Description DefaultValue="Pridá TLP štítok do hlavičky dokumentu." />
-  <IconUrl DefaultValue="https://raw.githubusercontent.com/xgriefx/aotlp/refs/heads/main/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://raw.githubusercontent.com/xgriefx/aotlp/refs/heads/main/assets/icon-80.png"/>
+  <IconUrl DefaultValue="https://xgriefx.github.io/aotlp/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://xgriefx.github.io/aotlp/assets/icon-80.png"/>
   <SupportUrl DefaultValue="https://yourcompany.example.com/support" />
 
   <Hosts>
@@ -17,7 +17,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://raw.githubusercontent.com/xgriefx/aotlp/refs/heads/main/taskpane/taskpane.html" />
+    <SourceLocation DefaultValue="https://xgriefx.github.io/aotlp/taskpane/taskpane.html" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
