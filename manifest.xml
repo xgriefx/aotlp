@@ -8,8 +8,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="TLP Štítky" />
   <Description DefaultValue="Pridá TLP štítok do hlavičky dokumentu." />
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+  <IconUrl DefaultValue="https://raw.githubusercontent.com/xgriefx/aotlp/refs/heads/main/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://raw.githubusercontent.com/xgriefx/aotlp/refs/heads/main/assets/icon-80.png"/>
   <SupportUrl DefaultValue="https://yourcompany.example.com/support" />
 
   <Hosts>
