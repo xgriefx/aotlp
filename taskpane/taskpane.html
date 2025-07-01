@@ -3,13 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <title>TLP Štítky</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <script src="https://xgriefx.github.io/aotlp/taskpane/taskpane.js"></script>
+  <script src="taskpane.js" defer></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #0078D7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005A9E;
+    }
+    @media (max-width: 600px) {
+      button {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h2>Vyber TLP štítok</h2>
-  <button onclick="addTlpLabel('TLP:Interný')">TLP:Interný</button>
-  <button onclick="addTlpLabel('TLP:Chránený')">TLP:Chránený</button>
+  <h2>TLP štítok</h2>
+  <button onclick="addTlpLabel('TLP:Interný')">TLP:Interný</button><br>
+  <button onclick="addTlpLabel('TLP:Chránený')">TLP:Chránený</button><br>
   <button onclick="addTlpLabel('TLP:Verejný')">TLP:Verejný</button>
 </body>
 </html>
