@@ -16,7 +16,7 @@ Office.onReady(() => {
       // Hľadaj existujúci TLP štítok
       let found = false;
       for (let p of paragraphs.items) {
-        if (p.text.startsWith("TLP:")) {
+        if (p.text.trim().startsWith("TLP:")) {
           p.text = tlpValue;
           p.alignment = "Right";
           p.font.color = "#E8E8E8";
