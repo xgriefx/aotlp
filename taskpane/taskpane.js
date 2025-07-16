@@ -19,7 +19,7 @@ Office.onReady(() => {
         if (p.text.trim().startsWith("TLP:")) {
           p.insertText(tlpValue, "Replace");
           p.alignment = "Right";
-          p.select(Word.SelectionMode.select).font.color = "#000000";
+          p.select(Word.SelectionMode.select).font.color = "#595959";
           p.select(Word.SelectionMode.select).font.bold = true;
           found = true;
           break;
@@ -30,8 +30,8 @@ Office.onReady(() => {
       if (!found) {
         const newP = header.insertParagraph(tlpValue, "Start");
         newP.alignment = "Right";
-        newP.font.color = "#595959";
-        newP.font.bold = true;
+        newP.select(Word.SelectionMode.select).font.color = "#595959";
+        newP.select(Word.SelectionMode.select).font.bold = true;
       }
 
       await context.sync();
