@@ -30,7 +30,7 @@ Office.onReady(() => {
       if (!found) {
         const newP = header.insertParagraph(tlpValue, "Start");
         newP.alignment = "Right";
-        newP.font.color = "#E8E8E8";
+        newP.font.color = "#595959";
       }
 
       await context.sync();
