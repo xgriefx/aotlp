@@ -8,33 +8,17 @@ Office.onReady(() => {
       await context.sync();
 
       const header = sections.items[0].getHeader("Primary");
-      const paragraphs = header.paragraphs;
-      context.load(paragraphs, "items, items/text");
 
-      await context.sync();
+      // Clear existing content in header
+      header.clear();
 
-      // Hľadaj existujúci TLP štítok
-      let found = false;
-      for (let p of paragraphs.items) {
-        if (p.text.startsWith("TLP:")) {
-          p.text = tlpValue;
-          p.alignment = "Right";
-          p.font.color = "#E8E8E8";
-          found = true;
-          break;
-        }
-      }
-
-      // Ak nenašiel, pridaj nový odstavec
-      if (!found) {
-        const newP = header.insertParagraph(tlpValue, "End");
-        newP.alignment = "Right";
-        newP.font.color = "#E8E8E8";
-      }
+      // Insert new right-aligned label
+      const paragraph = header.insertParagraph(tlpValue, "Start");
+      paragraph.alignment = "Right";
 
       await context.sync();
     }).catch((error) => {
-      console.error("Chyba pri vkladaní štítku:", error);
+      console.error("Chyba:", error);
     });
   };
 });
