@@ -30,8 +30,8 @@ Office.onReady(() => {
       if (!found) {
         const newP = header.insertParagraph(tlpValue, "Start");
         newP.alignment = "Right";
-        newP.select(Word.SelectionMode.select).font.color = "#595959";
-        newP.select(Word.SelectionMode.select).font.bold = true;
+        newP.font.color = "#595959";
+        newP.font.bold = true;
       }
 
       await context.sync();
