@@ -19,8 +19,8 @@ Office.onReady(() => {
         if (p.text.trim().startsWith("TLP:")) {
           p.insertText(tlpValue, "Replace");
           p.alignment = "Right";
-       //   p.select(Word.SelectionMode.select).font.color = "#595959";
-       //   p.select(Word.SelectionMode.select).font.bold = true;
+          p.select(Word.SelectionMode.select).font.color = "#595959";
+          p.select(Word.SelectionMode.select).font.bold = true;
           found = true;
           break;
         }
