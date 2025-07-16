@@ -27,7 +27,7 @@ Office.onReady(() => {
 
       // Ak nenašiel, pridaj nový odstavec
       if (!found) {
-        const newP = header.insertParagraph(tlpValue, "End");
+        const newP = header.insertParagraph(tlpValue, "Start");
         newP.alignment = "Right";
         newP.font.color = "#E8E8E8";
       }
