@@ -12,7 +12,7 @@ Office.onReady(() => {
       context.load(paragraphs, "items, items/text");
 
       await context.sync();
-
+      console.log("search");
       // Hľadaj existujúci TLP štítok
       let found = false;
       for (let p of paragraphs.items) {
