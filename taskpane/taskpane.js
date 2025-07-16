@@ -12,15 +12,15 @@ Office.onReady(() => {
       context.load(paragraphs, "items, items/text");
 
       await context.sync();
-      console.log("search");
+      
       // Hľadaj existujúci TLP štítok
       let found = false;
       for (let p of paragraphs.items) {
         if (p.text.trim().startsWith("TLP:")) {
-          console.log("Found");
           p.insertText(tlpValue, "Replace");
           p.alignment = "Right";
-          p.font.color = "#E8E8E8";
+          p.font.color = "#595959";
+          newP.font.bold = true;
           found = true;
           break;
         }
@@ -31,6 +31,7 @@ Office.onReady(() => {
         const newP = header.insertParagraph(tlpValue, "Start");
         newP.alignment = "Right";
         newP.font.color = "#595959";
+        newP.font.bold = true;
       }
 
       await context.sync();
