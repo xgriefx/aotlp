@@ -17,7 +17,7 @@ Office.onReady(() => {
       let found = false;
       for (let p of paragraphs.items) {
         if (p.text.trim().startsWith("TLP:")) {
-          p.text = tlpValue;
+          p.insertText(tlpValue, Word.InsertLocation.replace);
           p.alignment = "Right";
           p.font.color = "#E8E8E8";
           found = true;
