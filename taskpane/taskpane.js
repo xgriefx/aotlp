@@ -4,48 +4,37 @@ Office.onReady(() => {
   addTlpLabel = function(tlpValue) {
     Word.run(async (context) => {
       const sections = context.document.sections;
-      const body = context.document.body;
       context.load(sections, "headers");
-      context.load(body, "pageWidth");
-
       await context.sync();
-
-      const pageWidth = body.pageWidth;
-      const shapeWidth = 200;
-      const leftPos = pageWidth - shapeWidth - 40;
 
       const header = sections.items[0].getHeader("Primary");
-      const shapes = header.shapes;
-      context.load(shapes, "items");
+      const paragraphs = header.paragraphs;
+      context.load(paragraphs, "items, items/text");
+
       await context.sync();
 
-      // Odstráň starý štítok
-      for (let shape of shapes.items) {
-        if (shape.title === "TLPLabel") {
-          shape.delete();
+      // Hľadaj existujúci TLP štítok
+      let found = false;
+      for (let p of paragraphs.items) {
+        if (p.text.startsWith("TLP:")) {
+          p.text = tlpValue;
+          p.alignment = "Right";
+          p.font.color = "#E8E8E8";
+          found = true;
+          break;
         }
       }
 
-      // Pridaj nové textové pole na dynamickú pozíciu
-      const newShape = header.shapes.addTextBox(tlpValue, {
-        height: 30,
-        width: shapeWidth,
-        left: leftPos,
-        top: 0
-      });
-
-      newShape.title = "TLPLabel";
-      newShape.textFrame.textRange.font.bold = true;
-      newShape.textFrame.textRange.font.size = 12;
-      newShape.textFrame.textRange.font.name = "Calibri";
-      newShape.textFrame.textRange.font.color = "#E8E8E8";
-      newShape.alignment = "Right";
-      newShape.textFrame.horizontalAlignment = "Right";
-      newShape.zOrder = "SendToBack";
+      // Ak nenašiel, pridaj nový odstavec
+      if (!found) {
+        const newP = header.insertParagraph(tlpValue, "End");
+        newP.alignment = "Right";
+        newP.font.color = "#E8E8E8";
+      }
 
       await context.sync();
     }).catch((error) => {
-      console.error("Chyba:", error);
+      console.error("Chyba pri vkladaní štítku:", error);
     });
   };
 });
